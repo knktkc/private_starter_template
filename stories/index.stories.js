@@ -4,6 +4,10 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import VueInfoAddon from 'storybook-addon-vue-info'
+import { withKnobs, text } from '@storybook/addon-knobs'
+import { withNotes } from '@storybook/addon-notes'
+
 import MyButton from './MyButton';
 import Welcome from './Welcome';
 
@@ -14,10 +18,20 @@ storiesOf('Welcome', module).add('to Storybook', () => ({
 }));
 
 storiesOf('Button', module)
-  .add('with text', () => ({
-    components: { MyButton },
-    template: '<my-button @click="action">Hello Button</my-button>',
-    methods: { action: action('clicked') },
+  .addDecorator(VueInfoAddon)
+  .addDecorator(withKnobs)
+  .add('with text', withNotes(
+    `
+      sizeとcolorはここにあるやつを使ってください
+      size: minimum, small, normal, large, full
+      color: default, primary, success, info, warning, danger, dark
+    `
+  )(() => {
+    return {
+      components: { MyButton },
+      template: '<my-button @click="action">Hello Button</my-button>',
+      methods: { action: action('clicked') },
+    }
   }))
   .add('with JSX', () => ({
     components: { MyButton },
