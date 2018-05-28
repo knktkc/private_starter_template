@@ -15,10 +15,14 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@storybook/addon-knobs": "^3.4.6",
+    "@storybook/addon-notes": "^3.4.6",
+    "@storybook/addon-viewport": "^3.4.6",
     "autoprefixer": "^8.5.1",
     "nuxt": "^1.0.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
+    "storybook-addon-vue-info": "^0.4.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   },
