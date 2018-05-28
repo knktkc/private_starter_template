@@ -37,6 +37,6 @@ module.exports = {
   },
   css: [
     // node.js module but we specify the pre-processor
-    { src: '~assets/main.scss', lang: 'scss' }
+    { src: '~assets/main.sass', lang: 'sass' }
   ]
 }
