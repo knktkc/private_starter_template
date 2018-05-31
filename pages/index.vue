@@ -18,16 +18,32 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <p>
+        <button @click="increment">{{ counter }}</button><br>
+        <nuxt-link to="/about">About</nuxt-link>
+      </p>
     </div>
   </section>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
   components: {
     AppLogo
+  },
+  fetch({ store }) {
+    store.commit('increment')
+  },
+  computed: mapState([
+    'counter'
+  ]),
+  methods: {
+    increment() {
+      this.$store.commit('increment')
+    }
   }
 }
 </script>
