@@ -37,9 +37,7 @@ export default {
   fetch({ store }) {
     store.commit('increment')
   },
-  computed: mapState([
-    'counter'
-  ]),
+  computed: mapState(['counter']),
   methods: {
     increment() {
       this.$store.commit('increment')
@@ -58,7 +56,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;
