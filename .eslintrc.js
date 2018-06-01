@@ -26,6 +26,7 @@ module.exports = {
     'quotes': [1, 'single'],
     'no-console': 'off',
     'vue/max-attributes-per-line': 'off',
+    // https://prettier.io/docs/en/options.html のオプションを指定できる
     'prettier/prettier': ['error', { 'semi': false , "singleQuote": true}]
   }
 }
